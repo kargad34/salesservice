@@ -1,0 +1,4 @@
+org\gokhanka\sales\salesservice\sales\process\DataStoreTest.class
+org\gokhanka\sales\salesservice\sales\process\MessageProcessorTest.class
+org\gokhanka\sales\salesservice\SalesServiceResourceTest.class
+org\gokhanka\sales\salesservice\SalesServiceResourceCycleTest.class
