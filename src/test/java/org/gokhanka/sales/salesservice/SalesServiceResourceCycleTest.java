@@ -13,16 +13,15 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-
 import static org.junit.Assert.assertEquals;
-
 
 public class SalesServiceResourceCycleTest {
 
-    private  HttpServer server;
-    private  WebTarget target;
+    private HttpServer server;
+    private WebTarget  target;
+
     @Before
-    public  void setUp() throws Exception {
+    public void setUp() throws Exception {
         // start the server
         server = Main.startServer();
         // create the client
@@ -38,7 +37,7 @@ public class SalesServiceResourceCycleTest {
     }
 
     @After
-    public  void tearDown() throws Exception {
+    public void tearDown() throws Exception {
         server.shutdownNow();
     }
 
@@ -50,25 +49,50 @@ public class SalesServiceResourceCycleTest {
         String responseMsg = target.path("service/servertest").request().get(String.class);
         assertEquals("Got it!", responseMsg);
     }
+
+    /**
+     * To simulate the whole lifecycle of the application by sending various types of messages
+     */
     @Test
     public void testSaleStrore() {
         String responseMsg = null;
         for (int i = 0; i < MessageProcessor.getInstance().getReportingThreshold(); i++) {
-            responseMsg =  target.path("service/message").queryParam("messageType", "0").queryParam("productType", "ELMA").queryParam("value", "2").request().get(String.class);            
+            responseMsg = target.path("service/message").queryParam("messageType",
+                                                                    "0").queryParam("productType",
+                                                                                    "ELMA").queryParam("value",
+                                                                                                       "2").request().get(String.class);
         }
         for (int i = 0; i < MessageProcessor.getInstance().getReportingThreshold(); i++) {
-            responseMsg =  target.path("service/message").queryParam("messageType", "0").queryParam("productType", "Portakal").queryParam("value", "5").request().get(String.class);            
+            responseMsg = target.path("service/message").queryParam("messageType",
+                                                                    "0").queryParam("productType",
+                                                                                    "Portakal").queryParam("value",
+                                                                                                           "5").request().get(String.class);
         }
         for (int i = 0; i < MessageProcessor.getInstance().getReportingThreshold(); i++) {
-            responseMsg = target.path("service/message").queryParam("messageType", "1").queryParam("productType", "ELMA").queryParam("value", "2").queryParam("ocurrence", "2").request().get(String.class);            
-        }  
+            responseMsg = target.path("service/message").queryParam("messageType",
+                                                                    "1").queryParam("productType",
+                                                                                    "ELMA").queryParam("value",
+                                                                                                       "2").queryParam("ocurrence",
+                                                                                                                       "2").request().get(String.class);
+        }
         for (int i = 0; i < MessageProcessor.getInstance().getReportingThreshold(); i++) {
-            responseMsg = target.path("service/message").queryParam("messageType", "2").queryParam("productType", "ELMA").queryParam("value", "2").queryParam("operator", "0").request().get(String.class);           
-        } 
+            responseMsg = target.path("service/message").queryParam("messageType",
+                                                                    "2").queryParam("productType",
+                                                                                    "ELMA").queryParam("value",
+                                                                                                       "2").queryParam("operator",
+                                                                                                                       "0").request().get(String.class);
+        }
         for (int i = 0; i < MessageProcessor.getInstance().getReportingThreshold(); i++) {
-            responseMsg = target.path("service/message").queryParam("messageType", "2").queryParam("productType", "PORTAKAL").queryParam("value", "1").queryParam("operator", "2").request().get(String.class);           
-        } 
-        responseMsg =  target.path("service/message").queryParam("messageType", "0").queryParam("productType", "ELMA").queryParam("value", "2").request().get(String.class);
+            responseMsg = target.path("service/message").queryParam("messageType",
+                                                                    "2").queryParam("productType",
+                                                                                    "PORTAKAL").queryParam("value",
+                                                                                                           "1").queryParam("operator",
+                                                                                                                           "2").request().get(String.class);
+        }
+        responseMsg = target.path("service/message").queryParam("messageType",
+                                                                "0").queryParam("productType",
+                                                                                "ELMA").queryParam("value",
+                                                                                                   "2").request().get(String.class);
         assertEquals("NO MORE NEW REQUEST ACCEPTED", responseMsg);
     }
 }

@@ -51,11 +51,17 @@ public class SalesServiceResourceTest {
         String responseMsg = target.path("service/servertest").request().get(String.class);
         assertEquals("Got it!", responseMsg);
     }
+    /**
+     * To test 1 sale transaction of ELMA product
+     */
     @Test
     public void testStoreSale() {
         String responseMsg = target.path("service/message").queryParam("messageType", "0").queryParam("productType", "ELMA").queryParam("value", "2.0").request().get(String.class);
         assertEquals("SUCCESS", responseMsg);
     }
+    /**
+     * To test 1 sale transaction of ELMA product with wrong input, to test validations
+     */
     @Test
     public void testStoreSaleWrongInput() {
         String responseMsg = target.path("service/message").queryParam("messageType", "-1").queryParam("productType", "ELMA").queryParam("value", "2.0").request().get(String.class);
@@ -66,12 +72,19 @@ public class SalesServiceResourceTest {
         String responseMsg = target.path("service/message").queryParam("messageType", "3").queryParam("productType", "ELMA").queryParam("value", "2.0").request().get(String.class);
         assertEquals("ERROR", responseMsg);
     }
+    /**
+     *  Multiple occurrence of a sale transaction is simulated
+     *  first an store process is pushed then the multiple occurrence scenario applies
+     */
     @Test
     public void testStoreSaleMultiple() {
         String responseMsg = target.path("service/message").queryParam("messageType", "0").queryParam("productType", "ELMA").queryParam("value", "2.0").request().get(String.class);
         responseMsg = target.path("service/message").queryParam("messageType", "1").queryParam("productType", "ELMA").queryParam("value", "2.0").queryParam("ocurrence", "2").request().get(String.class);
         assertEquals("SUCCESS", responseMsg);
     }
+    /**
+     *  Scenario is continued from the previous step in testStoreSaleMultiple
+     */
     @Test
     public void testStoreSaleAdjSale0() {
         String responseMsg = target.path("service/message").queryParam("messageType", "0").queryParam("productType", "ELMA").queryParam("value", "2.0").request().get(String.class);
@@ -79,6 +92,9 @@ public class SalesServiceResourceTest {
         responseMsg = target.path("service/message").queryParam("messageType", "2").queryParam("productType", "ELMA").queryParam("value", "2.0").queryParam("operator", "0").request().get(String.class);
         assertEquals("SUCCESS", responseMsg);
     }
+    /**
+     *  Scenario is continued from the previous step in testStoreSaleMultiple, with different operand
+     */
     @Test
     public void testStoreSaleAdjSale1() {
         String responseMsg = target.path("service/message").queryParam("messageType", "0").queryParam("productType", "ELMA").queryParam("value", "2.0").request().get(String.class);
@@ -86,6 +102,9 @@ public class SalesServiceResourceTest {
         responseMsg = target.path("service/message").queryParam("messageType", "2").queryParam("productType", "ELMA").queryParam("value", "2.0").queryParam("operator", "1").request().get(String.class);
         assertEquals("SUCCESS", responseMsg);
     }
+    /**
+     *  Scenario is continued from the previous step in testStoreSaleMultiple, with different operand
+     */
     @Test
     public void testStoreSaleAdjSale2() {
         String responseMsg = target.path("service/message").queryParam("messageType", "0").queryParam("productType", "ELMA").queryParam("value", "2.0").request().get(String.class);

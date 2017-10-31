@@ -46,7 +46,7 @@ public class DataStoreTest {
     }
 
     /**
-     * Test to see that the message "Got it!" is sent in the response.
+     * Test to see if the multiple product store function is working properly
      */
     @Test
     public void testMultipleProductStoreSale() {
@@ -82,6 +82,9 @@ public class DataStoreTest {
         assertEquals(totalInitial + 9, totalLast);
     }
 
+    /**
+     *  Same Scenario with testMultipleProductStoreSale but this time application feature is used for multiple insertion
+     */
     @Test
     public void testMultipleProductStoreSaleOccur() {
         String product = "karpuz";
@@ -114,6 +117,9 @@ public class DataStoreTest {
         assertEquals(totalInitial + 9, totalLast);
     }
 
+    /**
+     * to test AdjustmentOperator.MULTIPLY on data management
+     */
     @Test
     public void testAdjustSaleMultiply() {
         String product = "elma";
@@ -134,6 +140,9 @@ public class DataStoreTest {
         assertEquals((initVal * 2f), instance.getValueOfSales("elma"), 0.01f);
     }
 
+    /**
+     *  test of adjustment of SUM operation on data objects
+     */
     @Test
     public void testAdjustSaleSum() {
         String product = "elma";
@@ -156,6 +165,9 @@ public class DataStoreTest {
                      0.01f);
     }
 
+    /**
+     *  subtraction operation is tested
+     */
     @Test
     public void testAdjustSaleSubtract() {
         String product = "elma";
@@ -179,6 +191,9 @@ public class DataStoreTest {
         assertEquals(expected, instance.getValueOfSales("elma"), 0.01f);
     }
 
+    /**
+     * to see if the reporting function is working as expected for adjustments
+     */
     @Test
     public void testAdjustReport() {
         String product = "elma";
@@ -197,6 +212,9 @@ public class DataStoreTest {
         assertEquals(initCount + 1, instance.retrieveAdjReports(sale).size());
     }
 
+    /**
+     * to see if the reporting function is working as expected for sale transactions
+     */
     @Test
     public void testSaleReportCounts() {
         String product = "karpuz";
@@ -221,6 +239,9 @@ public class DataStoreTest {
                 + instance.getTotalNumberOfSales("mandalina"), totalLast);
     }
 
+    /**
+     * helper methods of reporting of sales transactions tested
+     */
     @Test
     public void testSaleReporValuest() {
         String product = "karpuz";

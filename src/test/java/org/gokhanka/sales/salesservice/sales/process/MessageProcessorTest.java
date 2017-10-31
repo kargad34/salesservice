@@ -39,7 +39,7 @@ public class MessageProcessorTest {
     }
 
     /**
-     * Test to see that the message "Got it!" is sent in the response.
+     * Test to see that the asnych mechanism to process incoming messages working properly
      */
 
     @Test
@@ -61,6 +61,9 @@ public class MessageProcessorTest {
         assertEquals(dInstance.retrieveSales(sale).size(), initCount + 1);
     }
 
+    /**
+     * multiple occurance test by the asynch flow
+     */
     @Test
     public void testMessageMultipleOccur() {
         String product = "elma";
@@ -80,6 +83,9 @@ public class MessageProcessorTest {
         assertEquals(dInstance.retrieveSales(sale).size(), initCount + 3);
     }
 
+    /**
+     * adjustment operation is tested via aynch processing to see if it is properly doing its job
+     */
     @Test
     public void testMessageAdjustSale() {
         String product = "elma";
@@ -108,6 +114,9 @@ public class MessageProcessorTest {
         assertEquals(dInstance.getValueOfSales(product), initCount * 5, 0.01f);
     }
 
+    /**
+     * adjustment with subtraction test
+     */
     @Test
     public void testMessageAdjustSaleSubtract() {
         String product = "elma";
@@ -137,6 +146,9 @@ public class MessageProcessorTest {
         assertEquals(dInstance.getValueOfSales(product), expected, 0.01f);
     }
 
+    /**
+     * adjustment with sum operation test
+     */
     @Test
     public void testMessageAdjustSaleAdd() {
         String product = "elma";

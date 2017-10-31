@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="10" failures="0" name="org.gokhanka.sales.salesservice.SalesServiceResourceTest" time="1.033" errors="0" skipped="0">
+<testsuite tests="10" failures="0" name="org.gokhanka.sales.salesservice.SalesServiceResourceTest" time="1.09" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -27,7 +27,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
-    <property name="classworlds.conf" value="C:\basic\projects\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf2305250708984417179.tmp"/>
+    <property name="classworlds.conf" value="C:\basic\projects\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf3603299530141161491.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_131\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Redis\;C:\Program Files (x86)\sbt\bin;C:\cygwin64\bin;C:\Program Files\PuTTY\;C:\Program Files\doxygen\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\gokhanka\AppData\Local\Microsoft\WindowsApps;C:\apache-maven-3.5.0\bin;C:\Users\gokhanka\AppData\Local\GitHubDesktop\bin;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -61,14 +61,14 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="org.gokhanka.sales.salesservice.SalesServiceResourceTest" name="testStoreSaleWrongInput2" time="0.121"/>
-  <testcase classname="org.gokhanka.sales.salesservice.SalesServiceResourceTest" name="testStoreSale" time="0.119"/>
-  <testcase classname="org.gokhanka.sales.salesservice.SalesServiceResourceTest" name="testGetIt" time="0.103"/>
-  <testcase classname="org.gokhanka.sales.salesservice.SalesServiceResourceTest" name="testStoreSaleWrongAdjSale2" time="0.114"/>
-  <testcase classname="org.gokhanka.sales.salesservice.SalesServiceResourceTest" name="testStoreSaleAdjSale0" time="0.102"/>
-  <testcase classname="org.gokhanka.sales.salesservice.SalesServiceResourceTest" name="testStoreSaleAdjSale1" time="0.108"/>
-  <testcase classname="org.gokhanka.sales.salesservice.SalesServiceResourceTest" name="testStoreSaleAdjSale2" time="0.094"/>
-  <testcase classname="org.gokhanka.sales.salesservice.SalesServiceResourceTest" name="testStoreSaleWrongInput" time="0.077"/>
-  <testcase classname="org.gokhanka.sales.salesservice.SalesServiceResourceTest" name="testStoreSaleMultiple" time="0.104"/>
+  <testcase classname="org.gokhanka.sales.salesservice.SalesServiceResourceTest" name="testStoreSaleWrongInput2" time="0.171"/>
+  <testcase classname="org.gokhanka.sales.salesservice.SalesServiceResourceTest" name="testStoreSale" time="0.116"/>
+  <testcase classname="org.gokhanka.sales.salesservice.SalesServiceResourceTest" name="testGetIt" time="0.096"/>
+  <testcase classname="org.gokhanka.sales.salesservice.SalesServiceResourceTest" name="testStoreSaleWrongAdjSale2" time="0.107"/>
+  <testcase classname="org.gokhanka.sales.salesservice.SalesServiceResourceTest" name="testStoreSaleAdjSale0" time="0.086"/>
+  <testcase classname="org.gokhanka.sales.salesservice.SalesServiceResourceTest" name="testStoreSaleAdjSale1" time="0.133"/>
+  <testcase classname="org.gokhanka.sales.salesservice.SalesServiceResourceTest" name="testStoreSaleAdjSale2" time="0.104"/>
+  <testcase classname="org.gokhanka.sales.salesservice.SalesServiceResourceTest" name="testStoreSaleWrongInput" time="0.095"/>
+  <testcase classname="org.gokhanka.sales.salesservice.SalesServiceResourceTest" name="testStoreSaleMultiple" time="0.091"/>
   <testcase classname="org.gokhanka.sales.salesservice.SalesServiceResourceTest" name="testStoreSaleWrongAdjSale" time="0.091"/>
 </testsuite>
